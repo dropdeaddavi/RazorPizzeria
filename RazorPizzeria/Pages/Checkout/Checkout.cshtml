@@ -1,0 +1,25 @@
+﻿@page
+@model RazorPizzeria.Pages.Checkout.CheckoutModel
+
+
+<h1 style="margin-top: 80px; margin-bottom: 80px;">
+	Your Order!
+</h1>
+@{
+	var imagepath = "~/images/Pizzas/" + (Model.ImageTitle + ".png");
+}
+<div class="container-fluid text-center">
+	<div class="col-3 mx-auto mb-5">
+		<img class="w-100" asp-append-version="true" src="@imagepath"/>
+		<p>
+			Your order for the @Model.PizzaName is ready!
+		</p>
+		<p>
+			Total price for your order is: $@Model.PizzaPrice
+		</p>
+		<br />
+		<a class="btn btn-primary mt-1 mx-auto" asp-area="" asp-page="ThankYou">
+			Confirm order
+		</a>
+	</div>
+</div>

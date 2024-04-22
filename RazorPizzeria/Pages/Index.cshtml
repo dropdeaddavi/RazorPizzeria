@@ -1,0 +1,67 @@
+﻿@page
+@model PizzaModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="container top-div text-center">
+        <h1 class="display-4 text-capitalize text-black fw-bolder">
+            our great selection of pizzas
+        </h1>
+        <br />
+        <div style="
+                font-size: 10px;
+                font-weight: 400;">
+            <h4>
+                Choose one, or try our Pizza Builder! Then Order and done!
+            </h4>
+            <h4>
+                No need to give any of your details!
+            </h4>
+            <h4>
+                We already know everything.
+            </h4>
+        </div>
+        <br />
+        <h6 class="text-end text-sm-end" style="font-size:10px; color: gray;">
+            Only one pizza per order.
+        </h6>
+    </div>
+    <hr />
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-5 mt-5">
+                <div class="w-100 row make-your-own-div">
+                    <div class="col-4 align-middle text-center">
+                        <img src="~/images/Pizzas/Create.png" class="w-100"/>
+                    </div>
+                    <div class="col-8">
+                        <div class="align-middle make-your-own-text" style="display: block;">
+                            <h3 style="text-align: left;"> 
+                                Create your own Pizza
+                            </h3>
+                            <p style="text-align: left; display: block;">
+                                Make your own Pizza with our Pizza maker!
+                            </p>
+                            <a class="btn btn-primary" style="align-items: center; display: block; width: 100px;" asp-area="" asp-page="Forms/CustomPizza">
+                                Try now!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @foreach (var pizza in Model.pizzasDB)
+            {
+                var pizzaImgPath = "~/images/Pizzas/" + (pizza.ImageTitle + ".png");
+
+                <div class="col-4 mb-5 text-center">
+                    <a class="pizza-order-image" asp-area="" asp-page="Checkout/Checkout" asp-route-ImageTitle="@pizza.ImageTitle" asp-route-PizzaName="@pizza.PizzaName" asp-route-PizzaPrice="@pizza.FinalPrice">
+                        <img src="@pizzaImgPath" class="w-100" asp-append-version="true" />
+                    </a>
+                    <br />
+                </div>
+            }
+        </div>
+    </div>
+</div>

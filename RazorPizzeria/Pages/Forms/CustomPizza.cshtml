@@ -1,0 +1,53 @@
+﻿@page
+@model RazorPizzeria.Pages.Forms.CustomPizzaModel
+@{
+}
+
+<a class="nav-link text-dark" asp-area="" asp-page="Checkout/Checkout">Checkout</a>
+
+<div class="container align-items-center">
+	<h1 class="mt-5">
+		Create your own Pizza
+	</h1>
+	<br />
+	<form method="post">
+		<div class="container-lg align-content-between">
+			<input type="text" asp-for="Pizzas.PizzaName" placeholder="Name your pizza" class="mb-5"/>
+			<br />
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.TomatoSauce" id="TS" />
+				<label class="form-check-label" for="TS">Tomato Sauce</label>
+			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.Cheese" />
+				<label class="form-check-label">Cheese</label>
+				<br />
+			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.Ham" />
+				<label class="form-check-label">Ham</label>
+			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.Bacon" />
+				<label class="form-check-label">Bacon</label>
+			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.Beef" />
+				<label class="form-check-label">Beef</label>
+			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.Mushroom" />
+				<label class="form-check-label">Mushroom</label>
+			</div>
+			<div class="form-check form-switch">
+				<input class="form-check-input" type="checkbox" asp-for="Pizzas.Pepperoni" />
+				<label class="form-check-label">Pepperoni</label>
+			</div>
+			<br />
+			<hr />
+			<button class="btn btn-primary mt-1" type="submit">
+				Place order
+			</button>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,73 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.top-div {
+    margin-top: 100px;
+    margin-bottom: 100px
+}
+
+.inline-block-elements {
+    display: inline-block;
+}
+
+.create-pizza-div {
+    display: flex;
+    color: white;
+    height: 100%;
+    vertical-align: middle;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.create-pizza-img {
+    width: 100%;
+    max-width: 250px;
+}
+
+.pizza-img {
+    width: 100%;
+}
+
+.pizza-inventory {
+    display: flex;
+    justify-content: space-between;
+}
+
+.make-your-own-div {
+    display: flex;
+    align-items: center;
+    background: grey;
+    margin: 0;
+}
+
+.make-your-own-text {
+    display: flex;
+    align-items: center;
+    margin: 100px 0 20px 0;
+    color: white;
+}
+
+.pizza-order-image :hover {
+    transform: scale(1.05);
+    opacity: .5;
+}
+
+.min-width {
+    min-width: 150px;
+}
